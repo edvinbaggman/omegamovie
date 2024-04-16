@@ -1,6 +1,8 @@
 # OmegaMovie
 
-Frontend-uppgift Omegapoint Göteborg
+Frontend Assignment Omegapoint Göteborg
+
+Deployed: https://omegamovie.vercel.app/
 
 ## Description
 

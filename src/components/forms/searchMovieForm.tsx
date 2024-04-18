@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
 import FormInput from '../formComponents/formInput';
 import { useRouter } from 'next/navigation';
+import FormSelect from '../formComponents/formSelect';
 
 interface formValues {
   title: string;
@@ -13,6 +14,14 @@ interface formValues {
 const SearchMovieForm = () => {
   const router = useRouter();
 
+  const startYear = 1895;
+  const endYear = 2024;
+
+  const yearsOption = Array.from(
+    { length: endYear - startYear + 1 },
+    (_, i) => startYear + i
+  ).reverse();
+
   const initialValues = {
     title: '',
     year: '',
@@ -21,9 +30,7 @@ const SearchMovieForm = () => {
 
   const validationSchema = Yup.object({
     title: Yup.string().required('Title is required'),
-    year: Yup.string()
-      .matches(/^[0-9]+$/, 'Numbers only!')
-      .max(4, 'Time traveler?'),
+    year: Yup.number().max(endYear).min(startYear),
   });
 
   const onSubmit = (values: formValues) => {
@@ -51,12 +58,12 @@ const SearchMovieForm = () => {
                 className='w-full sm:w-4/5'
                 inputClassName='rounded sm:rounded-l-full'
               />
-              <FormInput
+              <FormSelect
                 label='Year'
                 name='year'
-                type='text'
+                options={yearsOption}
                 className='w-full sm:w-1/5'
-                inputClassName='rounded sm:rounded-r-full'
+                inputClassName='rounded sm:rounded-r-full border-l-0'
               />
             </div>
             <div className='flex justify-center gap-4'>

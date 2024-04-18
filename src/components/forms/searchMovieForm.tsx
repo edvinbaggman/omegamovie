@@ -29,7 +29,9 @@ const SearchMovieForm = () => {
   };
 
   const validationSchema = Yup.object({
-    title: Yup.string().required('Title is required'),
+    title: Yup.string()
+      .required('Title is required')
+      .min(3, 'Minimum 3 characters'),
     year: Yup.number().max(endYear).min(startYear),
   });
 

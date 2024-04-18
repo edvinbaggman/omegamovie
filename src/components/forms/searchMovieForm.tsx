@@ -63,7 +63,7 @@ const SearchMovieForm = () => {
                 name='year'
                 options={yearsOption}
                 className='w-full sm:w-1/5'
-                inputClassName='rounded sm:rounded-r-full border-l-0'
+                inputClassName='rounded sm:rounded-r-full sm:border-l-0'
               />
             </div>
             <div className='flex justify-center gap-4'>

@@ -41,8 +41,10 @@ export default async function Details({ searchParams }: Props) {
               {movie.Genre != 'N/A' ? movie.Genre : '...'}
             </p>
 
-            <p className='text-sm'>
-              {movie.Plot != 'N/A' ? movie.Plot : '...'}
+            <p className='text-sm'>{movie.Plot != 'N/A' ? movie.Plot : ''}</p>
+
+            <p className='text-sm font-bold'>
+              {movie.Actors != 'N/A' ? movie.Actors : ''}
             </p>
 
             <div>

@@ -23,7 +23,7 @@ export default async function Search({ searchParams }: Props) {
         <div className='font-bold text-2xl'>Search results</div>
         <div className='font-bold'>Click on a movie to see more details</div>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 py-5 sm:px-2'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 py-5 px-2'>
         {search.map((movie) => {
           return <Card key={movie.imdbID} movie={movie} />;
         })}
